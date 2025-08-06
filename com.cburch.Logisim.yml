@@ -14,6 +14,10 @@ finish-args:
   # Needs to save files locally
   - --filesystem=home
   - --env=PATH=/usr/bin:/app/bin:/app/jre/bin
+export:
+  - share/applications/com.cburch.Logisim.desktop
+  - share/mime/packages/logisim.xml
+  - share/metainfo/com.cburch.Logisim.metainfo.xml
 modules:
   - name: openjdk
     buildsystem: simple
@@ -27,6 +31,7 @@ modules:
       - install -Dm644 com.cburch.Logisim.svg /app/share/icons/hicolor/scalable/apps/com.cburch.Logisim.svg
       - install -Dm644 com.cburch.Logisim.desktop /app/share/applications/com.cburch.Logisim.desktop
       - install -Dm644 com.cburch.Logisim.metainfo.xml /app/share/metainfo/com.cburch.Logisim.metainfo.xml
+      - install -Dm644 mime-logisim.xml /app/share/mime/packages/logisim.xml
     sources:
       - type: script
         dest-filename: logisim
@@ -43,4 +48,8 @@ modules:
         sha256: 2f1fe567ec45f0e82e963f72d4b113581a56a14b4c0941544b34e6f582f77dea 
       - type: file
         url: "https://raw.githubusercontent.com/Dimitry-bit/logisim-flathub/main/com.cburch.Logisim.metainfo.xml"
-        sha256: eda9104028fa7cd39a858c59e673a43b8a556e999383ba0a0a5a5427ac275d39 
+        sha256: eda9104028fa7cd39a858c59e673a43b8a556e999383ba0a0a5a5427ac275d39
+      - type: file
+        url: "https://raw.githubusercontent.com/Dimitry-bit/logisim-flathub/main/mime-logisim.xml"
+        sha256: 9573e1be526a0dd6c68fb74c69af979ed82daf3a6295b4e3c465e63141b78e4
+
